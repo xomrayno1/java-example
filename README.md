@@ -2,7 +2,7 @@
 
 
 
-exchange distribute message to queue: phân phối message vào queue 
+exchange distribute message to queue: phân phối message vào queue.
 based on message routing key : dựa trên routing key
 exchange : fanout, direct, topic
 	
