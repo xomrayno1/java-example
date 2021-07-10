@@ -9,6 +9,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tampro.config.RabbitMQConfig;
 import com.tampro.entity.Employee;
 
+////demo exchange topic
+
 @Service
 public class EmployeeJsonProducer {
 

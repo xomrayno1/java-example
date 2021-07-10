@@ -26,9 +26,11 @@ public class RabbitMQProducer {
 	//fanout: multiple queues for single message: nhiều queues cho 1 message
 	//		 Broadcast to all queues bound to it : phát cho tất cả queue nó liết kết
 	
-	//direct: send to selective queue: Gửi đến hàng đợi chọn lọc (sử dụng điều kiện để distribute message to queue)
+	//direct: send to selective queue: Gửi đến hàng đợi chọn lọc (sử dụng routing key để distribute message to queue)
 		//  based on routing key: dựa trên routing key
 		// 	message can be discarded:  tin nhắn có thể bị loại bỏ
+	
+	//topic : ".".png, ".".svg , #.jpg , *.large.svg
 	
 	private int i = 0;
 	

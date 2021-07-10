@@ -6,22 +6,22 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tampro.entity.Employee;
+import com.tampro.entity.Picture;
 
-//demo exchange fanout
+//demo exchange direct
 
 @Service
-public class HumanResourceProducer {
+public class PictureProducer {
 
 	@Autowired
 	private RabbitTemplate rabbitTemplate;
 	
 	private ObjectMapper objectMapper = new ObjectMapper();
 	
-	public void sendMessage(Employee emp) {
+	public void sendMessage(Picture pic) {
 		try {
-			var json = objectMapper.writeValueAsString(emp);
-			rabbitTemplate.convertAndSend("q.hr", "", json);
+			var json = objectMapper.writeValueAsString(pic);
+			rabbitTemplate.convertAndSend("x.picture", pic.getType(), json);
 		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
