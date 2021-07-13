@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/products")
-public class ProductController {
+@RequestMapping("/api/v1/message")
+public class MessageController {
 	
 	
-	private static final Logger log = LoggerFactory.getLogger(ProductController.class);
+	private static final Logger log = LoggerFactory.getLogger(MessageController.class);
 
 	
 	@GetMapping
