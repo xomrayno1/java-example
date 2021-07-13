@@ -1,0 +1,4 @@
+2021-07-13 16:48:58 INFO  com.tampro.Elasticsearch01Application - Starting Elasticsearch01Application using Java 15.0.1 on Admin with PID 10044 (D:\elasticsearch-01\Elasticsearch-01\bin\main started by Admin in D:\elasticsearch-01\Elasticsearch-01)
+2021-07-13 16:48:58 INFO  com.tampro.Elasticsearch01Application - No active profile set, falling back to default profiles: default
+2021-07-13 16:49:00 INFO  com.tampro.Elasticsearch01Application - Started Elasticsearch01Application in 2.095 seconds (JVM running for 3.075)
+2021-07-13 16:49:08 INFO  c.t.api.controllers.ProductController - get message successfully
