@@ -6,10 +6,7 @@ public class Picture {
 	private String type;
 	private String source;
 	private long size;
-	
-	
-	
-	
+
 	public Picture() {
 		 
 	}

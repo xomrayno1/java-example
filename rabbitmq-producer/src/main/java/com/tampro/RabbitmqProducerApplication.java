@@ -12,6 +12,7 @@ import com.tampro.entity.Employee;
 import com.tampro.entity.Picture;
 import com.tampro.producer.EmployeeJsonProducer;
 import com.tampro.producer.HumanResourceProducer;
+import com.tampro.producer.MyPictureProducer;
 import com.tampro.producer.PictureProducer;
 import com.tampro.producer.RabbitMQProducer;
 
@@ -30,6 +31,9 @@ public class RabbitmqProducerApplication implements CommandLineRunner{
 
 	@Autowired
 	private PictureProducer pictureProducer;
+	
+	@Autowired
+	private MyPictureProducer myPictureProducer;
 	
 	private static final Logger log = LoggerFactory.getLogger(RabbitmqProducerApplication.class);
 	
@@ -56,14 +60,17 @@ public class RabbitmqProducerApplication implements CommandLineRunner{
 		/*
 		 * demo exchange direct
 		 * */
-		Picture picture = new Picture("anh ", "jpg", "http://localhost:anh", 100);
-		pictureProducer.sendMessage(picture);
+//		Picture picture = new Picture("anh ", "jpg", "http://localhost:anh", 100);
+//		pictureProducer.sendMessage(picture);
+//		
+//		Picture picture1 = new Picture("anh 1", "svg", "http://localhost:anh1", 100);
+//		pictureProducer.sendMessage(picture1);
+//		
+//		Picture picture2 = new Picture("anh 2", "png", "http://localhost:anh2", 200);
+//		pictureProducer.sendMessage(picture2);
 		
-		Picture picture1 = new Picture("anh 1", "svg", "http://localhost:anh1", 100);
-		pictureProducer.sendMessage(picture1);
-		
-		Picture picture2 = new Picture("anh 2", "png", "http://localhost:anh2", 200);
-		pictureProducer.sendMessage(picture2);
+		Picture picture = new Picture("anh ", "jpg", "http://localhost:anh", 9500);
+		myPictureProducer.sendMessage(picture);
 	}
 	
 	

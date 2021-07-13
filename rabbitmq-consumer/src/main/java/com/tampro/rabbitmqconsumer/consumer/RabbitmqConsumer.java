@@ -14,9 +14,9 @@ import com.tampro.entity.Employee;
 
 @Component
 public class RabbitmqConsumer {
+	
 	public static final String QUEUE = "nctam_queue";
 
-	
 	private static final Logger log = LoggerFactory.getLogger(RabbitmqConsumer.class);
 	// tình trạng 
 	//producer: fast producer

@@ -18,7 +18,7 @@ public class HumanResourceProducer {
 	
 	private ObjectMapper objectMapper = new ObjectMapper();
 	
-	public void sendMessage(Employee emp) {
+	public void sendMessage(Employee emp) {       
 		try {
 			var json = objectMapper.writeValueAsString(emp);
 			rabbitTemplate.convertAndSend("q.hr", "", json);
