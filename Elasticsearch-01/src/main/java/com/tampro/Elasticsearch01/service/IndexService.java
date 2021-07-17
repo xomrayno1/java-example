@@ -46,19 +46,25 @@ public class IndexService {
 		
 		for(final String indexName : INDICES_TO_CREATE) {
 			try {
+				//check index exists
 				boolean indexExists = client.indices()
 							.exists(new GetIndexRequest(indexName), RequestOptions.DEFAULT);
 				
-				if(indexExists) {
+				//nếu index tồn tại, và không yêu cầu xoá khi tồn tại thì bỏ qua 
+				if(indexExists) { 
 					 if(!deleteExisting) {
 						 continue;
 					 }
 					 
+					 //client.indices() -> thao tác index
+					 ///DeleteIndexRequest
 					 client.indices().delete(
 							 new DeleteIndexRequest(indexName), 
 							 RequestOptions.DEFAULT
 					 );
 				}
+				
+				//create index
 				final CreateIndexRequest createIndexRequest = new CreateIndexRequest(indexName);
 				createIndexRequest.settings(settings, XContentType.JSON);
 				

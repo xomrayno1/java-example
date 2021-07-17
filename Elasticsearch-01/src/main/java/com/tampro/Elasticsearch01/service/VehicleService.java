@@ -31,7 +31,6 @@ import com.tampro.Elasticsearch01.search.util.SearchUtil;
 public class VehicleService {
 	private static final ObjectMapper MAPPER = new ObjectMapper();
 	private static final Logger LOG = LoggerFactory.getLogger(VehicleService.class);
-
 	private final RestHighLevelClient client;
 	
 	@Autowired
@@ -82,7 +81,13 @@ public class VehicleService {
         }
     }
 	
-	public Boolean index(final Vehicle vehicle) {
+	/*
+	 *  client.index  using add _doc
+	 * 	params : instance IndexRequest(indexName) , (set name , set source)
+	 * 	return : object IndexResponse (if client.index success then indexResponse.status().equals(RestStatus.OK)) 
+	 */
+    
+	public Boolean index(final Vehicle vehicle) { //add add, update
 		try {
 			final String vehicleAsString = MAPPER.writeValueAsString(vehicle);
 			
@@ -90,7 +95,7 @@ public class VehicleService {
 			request.id(vehicle.getId());
 			request.source(vehicleAsString, XContentType.JSON);
 			
-			final IndexResponse response = client.index(request, RequestOptions.DEFAULT);
+			final IndexResponse response = client.index(request, RequestOptions.DEFAULT); //index request add doc  , 
 			 
 			return response != null && response.status().equals(RestStatus.OK);
 		} catch (Exception e) {
@@ -100,11 +105,16 @@ public class VehicleService {
 		}
 	}
 	
-	public Vehicle getById(final String vehicleId) {
+	/*
+	 * client.get  get _doc
+	 * 	params : instance GetRequest(indexName, searchId)
+	 * 	return : object GetResponse
+	 */
+	public Vehicle getById(final String vehicleId) { // get doc
 		try {
-			final GetResponse documentFields = client.get
+			final GetResponse documentFields = client.get // get doc
 						(new GetRequest(Indices.VEHICLE_INDEX, vehicleId), 
-								RequestOptions.DEFAULT);
+								RequestOptions.DEFAULT); // get request
 			if(documentFields == null || documentFields.isSourceEmpty()) {
 				return null;
 			}
