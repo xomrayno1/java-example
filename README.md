@@ -1,25 +1,29 @@
 # java-example
 Elastic search , add logback
-http://localhost:9200/_cat/indices?format=json : Liệt kê tất cả các index
-http://localhost:9200/customer hiển thị index customer
-http://localhost:9200/ hiển thị thông tin version, cluster
-http://localhost:9200/_cat/nodes?format=json hiển thị thông tin nodes
-http://localhost:9200/customer/_doc/3 get customer id = 3
+<p>http://localhost:9200/_cat/indices?format=json : Liệt kê tất cả các index</p>
+<p>http://localhost:9200/customer hiển thị index customer</p>
+<p>http://localhost:9200/ hiển thị thông tin version, cluster</p>
+<p>http://localhost:9200/_cat/nodes?format=json hiển thị thông tin nodes</p>
+<p>http://localhost:9200/customer/_doc/3 get customer id = 3</p>
+<hr>
+<p>http://localhost:8080/api/v1/vehicle/search Tìm kiếm<p>
+<div>
+Method: Post,  </br>
+Params: { </br>
+    "fields" : ["name"], </br>
+    "searchTerm" : "TTT",  </br>
+    "sortBy" : "id",  </br>
+    "order" : "DESC" </br>
+} </br>
+</div>
 
-http://localhost:8080/api/v1/vehicle/search Tìm kiếm
-Method: Post, 
-Params: {
-    "fields" : ["name"],
-    "searchTerm" : "TTT",
-    "sortBy" : "id",
-    "order" : "DESC"
+<p>http://localhost:8080/api/v1/vehicle Thêm, sửa</p>
+<div>
+Method: Post, </br>
+Params: { </br>
+    "id" : 4, </br>
+    "number" : "952-153", </br>
+    "name" : "TTT 4", </br>
+    "created" : "2021-07-16" </br>
 }
-
-http://localhost:8080/api/v1/vehicle Thêm, sửa
-Method: Post,
-Params: {
-    "id" : 4,
-    "number" : "952-153",
-    "name" : "TTT 4",
-    "created" : "2021-07-16"
-}
+</div>
