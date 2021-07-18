@@ -27,3 +27,25 @@ Params: { </br>
     "created" : "2021-07-16" </br>
 }
 </div>
+
+<hr>
+<div>
+    <table>
+        <tr>
+            <th>SQL-based</th>
+            <th>Elasticsearch</th>
+        </tr>
+        <tr>
+            <td>Database</td>
+            <td>Index</td>
+        </tr>
+        <tr>
+            <td>Tables</td>
+            <td>Type</td>
+        </tr>
+        <tr>
+            <td>Rows</td>
+            <td>Documents</td>
+        </tr>
+    </table>
+</div>
