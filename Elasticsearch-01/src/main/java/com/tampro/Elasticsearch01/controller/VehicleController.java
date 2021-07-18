@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tampro.Elasticsearch01.domain.Vehicle;
+import com.tampro.Elasticsearch01.helper.VehicleDummyDataService;
 import com.tampro.Elasticsearch01.search.SearchRequestDTO;
 import com.tampro.Elasticsearch01.service.VehicleService;
 
@@ -20,15 +21,22 @@ import com.tampro.Elasticsearch01.service.VehicleService;
 @RequestMapping("/api/v1/vehicle")
 public class VehicleController {
 	private final VehicleService service;
+	private final VehicleDummyDataService dummyDataService;
 
 	@Autowired
-	public VehicleController(VehicleService vehicleService) {
+	public VehicleController(VehicleService vehicleService, VehicleDummyDataService dummyDataService) {
 		this.service = vehicleService;
+		this.dummyDataService = dummyDataService;
 	}
 
 	@PostMapping
 	public void index(@RequestBody final Vehicle vehicle) {
 		service.index(vehicle);
+	}
+
+	@PostMapping("/insertdummydata")
+	public void insertDummyData() {
+		dummyDataService.insertDummyData();
 	}
 
 	@GetMapping("/{id}")
@@ -47,4 +55,9 @@ public class VehicleController {
 		return service.getAllVehiclesCreatedSince(date);
 	}
 
+	@PostMapping("/searchcreatedsince/{date}")
+	public List<Vehicle> searchCreatedSince(@RequestBody final SearchRequestDTO dto,
+			@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") final Date date) {
+		return service.searchCreatedSince(dto, date);
+	}
 }
