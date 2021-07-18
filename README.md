@@ -49,3 +49,16 @@ Params: { </br>
         </tr>
     </table>
 </div>
+
+<p>Boolean query:</p>
+A query that matches documents matching boolean combinations of other queries. The bool query maps to Lucene BooleanQuery. It is built using one or more boolean clauses, each clause with a typed occurrence. The occurrence types are: <br>
+
+must - the clause (query) must appear in matching documents and will contribute to the score. <br>
+
+filter - the clause (query) must appear in matching documents. However unlike must the score of the query will be ignored. Filter clauses are executed in filter context, meaning that scoring is ignored and clauses are considered for caching.<br>
+
+should - the clause (query) should appear in the matching document.<br>
+
+must_not - the clause (query) must not appear in the matching documents. Clauses are executed in filter context meaning that scoring is ignored and clauses are considered for caching. Because scoring is ignored, a score of 0 for all documents is returned.<br>
+
+
