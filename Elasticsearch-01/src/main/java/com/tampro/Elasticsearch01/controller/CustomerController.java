@@ -31,13 +31,6 @@ public class CustomerController {
 		return cusService.findAll();
 	}
 	
-//	@PostMapping("/get_list_paging_search_sort_filter")
-//	public Page<Customer> getListPagingSearchSortFilter(CustomerPagingSearchSortFilter cpssf) {
-//		Pageable pageable =	PageRequest.of(cpssf.getPageNumber(), cpssf.getPageSize());
-//		Page<Customer> page = cusService.pagingSearchSortFilter(cpssf.getCustomer(), cpssf.getFields(), pageable);
-//		return page;
-//	}
-	
 	@GetMapping("/search/address/{address}")
 	public List<Customer> getListSearchAddress(@PathVariable String address) {
 		List<Customer> page = cusService.searchByAddress(address);

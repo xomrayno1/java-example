@@ -38,10 +38,6 @@ public class CustomerService {
 		return cusRepo.findAll();
 	}
 	
-	public Page<Customer> pagingSearchSortFilter(Customer customer, String[] fields, Pageable pageable) {
-		return cusRepo.searchSimilar(customer, fields, pageable);
-	}
-	
 	public Page<Customer> getListByName(String name){
 		return cusRepo.findByName(name, PageRequest.of(0, 10));
 	}

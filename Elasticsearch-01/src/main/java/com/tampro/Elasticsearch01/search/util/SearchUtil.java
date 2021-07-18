@@ -22,16 +22,16 @@ public final class SearchUtil {
                                	                    final SearchRequestDTO dto) {
         try {
             SearchSourceBuilder builder = new SearchSourceBuilder()
-                    .postFilter(getQueryBuilder(dto));
+                    .postFilter(getQueryBuilder(dto)); //search
 
-            if (dto.getSortBy() != null) {
+            if (dto.getSortBy() != null) { // sort
                 builder = builder.sort(
                         dto.getSortBy(),
                         dto.getOrder() != null ? dto.getOrder() : SortOrder.ASC
                 );
             }
 
-            final SearchRequest request = new SearchRequest(indexName);
+            final SearchRequest request = new SearchRequest(indexName); // search request
             request.source(builder);
 
             return request;
@@ -58,6 +58,7 @@ public final class SearchUtil {
         }
     }
 
+    //build query search
     private static QueryBuilder getQueryBuilder(final SearchRequestDTO dto) {
         if (dto == null) {
             return null;
