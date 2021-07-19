@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tampro.common.CommonUtil;
 import com.tampro.domain.Customer;
 import com.tampro.service.CustomerService;
+import com.tampro.service.ElasticSearchService;
 
 @RestController
 @RequestMapping("/api/v1/customers")
@@ -25,11 +26,14 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
+	@Autowired
+	private ElasticSearchService elasticSearchService;
+	
 	//search on elasticsearch
 	@GetMapping("/search/{name}")
 	public List<Customer> getAllBySearchName(@PathVariable String name){
 		LOG.info(" get customer by name {}", name);
-		return customerService.getCustomerBySearch(name);
+		return elasticSearchService.getCustomerBySearch(name);
 	}
 	
 	@GetMapping("/{cusId}")
