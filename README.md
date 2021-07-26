@@ -1,4 +1,4 @@
-# java-example
+# Design Pattern
 <div>
   <ul>
     <li>Singleton Pattern</li>
