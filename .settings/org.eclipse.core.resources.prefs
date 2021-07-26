@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+encoding//src/com/tampro/command/exam01/BankApp.java=UTF-8
+encoding//src/com/tampro/command/exam01/OpenAccount.java=UTF-8
 encoding//src/com/tampro/facade/App.java=UTF-8
 encoding//src/com/tampro/singleton/App.java=UTF-8
 encoding//src/com/tampro/singleton/ThreadSafeSingleton.java=UTF-8
+encoding/<project>=UTF-8
