@@ -27,9 +27,9 @@ public class MaxConsecutiveOnes {
 		for(int i = 0 ; i < nums.length ; i++) {
 			if(nums[i] == 1) {
 				count++;
-				if(count > max) {
-					max = count;	//#
-				}
+				if(count > max) { //#2
+					max = count;	//#2
+				}//#2
 			}else {
 				count = 0;
 //				if(count > max) {
