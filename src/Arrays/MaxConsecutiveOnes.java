@@ -10,7 +10,6 @@ package Arrays;
  * Example 2: Input: nums = [1,0,1,1,0,1] __  Output: 2
  * Constraints: nums[i] is either 0 or 1.	 
  */
-
 public class MaxConsecutiveOnes {
 	
 	public static void main(String[] args) {
