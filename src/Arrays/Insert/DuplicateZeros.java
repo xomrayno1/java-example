@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.Insert;
 /*
  * Title: Duplicate Zeros
  * Date: 30/07/2021

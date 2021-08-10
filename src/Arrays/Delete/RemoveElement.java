@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.Delete;
 /*
  * Title: Remove Element
  * Date: 10/08/2021

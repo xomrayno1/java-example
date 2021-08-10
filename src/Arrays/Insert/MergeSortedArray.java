@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.Insert;
 /*
  * Title: Merge Sorted Array
  * Date: 10/08/2021
