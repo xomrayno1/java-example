@@ -1,8 +1,5 @@
 package LinkedList;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import LinkedList.SinglyLinkedList.DesignLinkedList;
 //run code linked list
 public class App {
