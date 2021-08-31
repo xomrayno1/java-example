@@ -1,6 +1,5 @@
 package LinkedList;
 
-import LinkedList.SinglyLinkedList.DesignLinkedList;
 //run code linked list
 public class App {
 	/*
@@ -19,31 +18,30 @@ public class App {
 	 */
 	
 	public static void main(String[] args) {
-		DesignLinkedList linkedList  = new DesignLinkedList();
-		linkedList.addAtHead(86);  //76 46 83 86 14 18 54 3
-		linkedList.addAtIndex(1, 54);
-		linkedList.addAtIndex(1, 14);
-		linkedList.addAtHead(83);
-		linkedList.deleteAtIndex(4);
-		linkedList.addAtIndex(3, 18);
-		linkedList.addAtHead(46);
-		linkedList.addAtTail(3);
-		linkedList.addAtHead(76);
-		System.out.println("get "+ linkedList.get(5));;
-		System.out.println("size "+ linkedList.size);
-		linkedList.displayAllNode();
+//		DesignLinkedList linkedList  = new DesignLinkedList();
+//		linkedList.addAtHead(86);  //76 46 83 86 14 18 54 3
+//		linkedList.addAtIndex(1, 54);
+//		linkedList.addAtIndex(1, 14);
+//		linkedList.addAtHead(83);
+//		linkedList.deleteAtIndex(4);
+//		linkedList.addAtIndex(3, 18);
+//		linkedList.addAtHead(46);
+//		linkedList.addAtTail(3);
+//		linkedList.addAtHead(76);
+//		System.out.println("get "+ linkedList.get(5));;
+//		System.out.println("size "+ linkedList.size);
+//		linkedList.displayAllNode();
 
-		
-//		List<String> list = new LinkedList<>();
-//		list.add("Red");
-//		list.add("Yellow");
-//		list.add("Orange");
-//		list.add("Black");
-//		list.remove(3);
-//		for(String ele : list) {
-//			System.out.println(ele);
-//		}
-//		
+		LinkedList.DoublyLinkedList.DesignLinkedList linkedList2 = new LinkedList.DoublyLinkedList.DesignLinkedList();
+		linkedList2.addAtHead(1);
+		linkedList2.addAtTail(3); 
+		linkedList2.addAtIndex(1, 2);
+		linkedList2.addAtTail(4);
+		linkedList2.addAtHead(0);
+
+		linkedList2.deleteAtIndex(3);
+		// 1 3 
+ 		linkedList2.displayAllNode();
 	}
 
 }
